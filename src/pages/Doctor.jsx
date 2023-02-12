@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export const Doctor = () => {
@@ -11,7 +10,7 @@ export const Doctor = () => {
 			.post("/api/admin/create/doctor", data)
 			.then((res) => {
 				if (res.data.success == true) {
-					alert("PATIENT REGISTERED SUCCESSULLY !");
+					alert("DOCTOR REGISTERED SUCCESSULLY !");
 				} else {
 					alert("ERROR !");
 				}
@@ -22,7 +21,7 @@ export const Doctor = () => {
 	return (
 		<>
 			<form onSubmit={handleSubmit(submit)}>
-				<h3>Login</h3>
+				<h3 style={{ textAlign: "center" }}>Doctor Registration</h3>
 				<fieldset>
 					<input
 						type="text"

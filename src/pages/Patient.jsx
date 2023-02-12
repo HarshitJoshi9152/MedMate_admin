@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -26,7 +26,7 @@ export const Patient = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit(submit)}>
-				<h3 style={{ textAlign: "center" }}>Login</h3>
+				<h3 style={{ textAlign: "center" }}>Patient Registration</h3>
 				<fieldset>
 					<input
 						type="text"

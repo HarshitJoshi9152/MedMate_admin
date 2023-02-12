@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Nav } from "./components/nav";
 import { Auth } from "./pages/Auth";
 import { Doctor } from "./pages/Doctor";
-import { Home } from "./pages/Home";
+// import { Home } from "./pages/Home";
 import { Patient } from "./pages/Patient";
 
 const Wrapper = ({ children }) => {

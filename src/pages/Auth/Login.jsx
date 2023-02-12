@@ -1,17 +1,24 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useAuthContext } from "../../state/AuthContext";
 
 export const Login = () => {
 	const { register, handleSubmit, errors } = useForm();
+
+	const { isAuth, username, login } = useAuthContext((state) => ({
+		username: state.username,
+		isAuth: state.isAuth,
+		login: state.login
+	}));
 
 	const submit = (data) => {
 		axios
 			.post("/api/admin/login", data)
 			.then((res) => {
-				console.log(res);
 				if (res.data.success == true) {
-					window.location.href = "/home";
+					login(res.data.username);
+					window.location.href = "/";
 				}
 			})
 			.catch((e) => console.log(e));
